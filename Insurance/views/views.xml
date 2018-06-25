@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+		<record id="view_insurance_module_tree" model="ir.ui.view">
+			<field name="name">insurance.info.tree</field>
+			<field name="model">insurance.info</field>
+			<field name="priority">2</field>
+			<field name="arch" type="xml">
+				<tree string="Insurance">
+					<field name="name"/>
+					<field name="insurance_Type"/>
+					<field name="insuracne_amt"/>
+					<field name="account_id" string="Agent"/>
+				</tree>
+			</field>
+    </record>
+
+
+     <record id="view_insurance_module_form" model="ir.ui.view">
+            <field name="name">insurance.info.form</field>
+            <field name="model">insurance.info</field>
+            <field name="arch" type="xml">
+                <form string="Insurance" class="o_sale_order">
+
+                <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="account_id"/>
+                        </group>
+                        <field name="insurance_line" editable="bottom" />
+                    <group>
+                        <group>
+                        	<field name="insurance_Type" />
+                            
+                        </group>
+
+                        <group>
+                        	<field name="insuracne_amt" />
+                          <field name="insurance_ids" string="insurance_ids" widget="many2many_tags"/>
+                        </group>
+                    </group>
+
+                </sheet>
+
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_insurance" model="ir.actions.act_window">
+            <field name="name">insurance</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">insurance.info</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                </p><p>
+                </p>
+            </field>
+        </record>
+
+
+        <record id="view_customer_module_tree" model="ir.ui.view">
+                <field name="name">customer.info.tree</field>
+                <field name="model">customer.info</field>
+                <field name="priority">2</field>
+                <field name="arch" type="xml">
+                <tree string="Customer">
+                    <field name="name"/>
+                    <field name="last_name"/>
+                    <field name="age"/>
+                    <field name="dob"/>
+                    <field name="gender"/>
+                    <field name="blood_group"/>
+                    <field name="city"/>
+                    <field name="nationality"/>
+                </tree>
+            </field>
+        </record>
+
+
+         <record id="view_Customer_module_form" model="ir.ui.view">
+            <field name="name">customer.info.form</field>
+            <field name="model">customer.info</field>
+            <field name="arch" type="xml">
+                <form string="Customer" class="o_sale_order">
+
+                <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    <group>
+                        <group>
+                            <field name="last_name"/>
+                            <field name="age"/>
+                            <field name="dob"/>
+                            <field name="gender"/>
+                            <field name="blood_group"/>
+                            <field name="customer_ids" string="customer" widget="many2many_tags"/>
+                        </group>
+                        <group>
+                            <field name="city"/>
+                            <field name="nationality"/>
+                            <field name="customer_id" invisible="1"/>
+                        </group>
+                    </group>
+
+                </sheet>
+
+                </form>
+            </field>
+        </record>
+
+
+         <record id="action_customer" model="ir.actions.act_window">
+            <field name="name">Customer</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">customer.info</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                </p><p>
+                </p>
+            </field>
+        </record>
+
+
+
+    <menuitem name="Insurance"
+        id="menu_insurance_root"
+        sequence="25"/>
+
+    <menuitem id="menu_insurance_config" name="insuracne"
+        parent="menu_insurance_root" sequence="1" />
+        
+
+    <menuitem action="action_insurance"
+            id="menu_insurance_module_1" parent="menu_insurance_config"
+            name="Insurance"
+            sequence="13" />
+
+    <menuitem action="action_customer"
+            id="menu_customer_module_2" parent="menu_customer_config"
+            name="Customer"
+            sequence="15" />
+
+</odoo>
+
+
+
+
