@@ -9,7 +9,7 @@
 					<field name="name"/>
 					<field name="insurance_Type"/>
 					<field name="insuracne_amt"/>
-					<field name="account_id" string="Agent"/>
+					<field name="account_id" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
 				</tree>
 			</field>
     </record>
@@ -131,7 +131,7 @@
         id="menu_insurance_root"
         sequence="25"/>
 
-    <menuitem id="menu_insurance_config" name="insuracne"
+    <menuitem id="menu_insurance_config" name="Insuracne"
         parent="menu_insurance_root" sequence="1" />
         
 
@@ -141,7 +141,7 @@
             sequence="13" />
 
     <menuitem action="action_customer"
-            id="menu_customer_module_2" parent="menu_customer_config"
+            id="menu_customer_module_2" parent="menu_insurance_config"
             name="Customer"
             sequence="15" />
 

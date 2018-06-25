@@ -14,7 +14,7 @@ class Insurance(models.Model):
     insurance_ids = fields.Many2many('customer.info','insurance_rel','customer_id','insurance_ids',string='insurance_ids')
   
 
-class Customer(models.Models):
+class Customer(models.Model):
 
     _name = "customer.info"
     _description = "customer info"
